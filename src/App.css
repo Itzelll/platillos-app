@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+.container h2 {
+  text-align: center;
+  margin: 25px auto;
+}
+
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+.submit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+.edit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+#publish {
+  background-color: #193a7a;
+}
+
+#delete {
+  background-color: #801414;
+}
+
+#update {
+  background-color: #0f6435;
+}
+
+#unpublish {
+  color: black;
+}
