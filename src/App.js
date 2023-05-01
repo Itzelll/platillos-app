@@ -28,7 +28,7 @@ class App extends Component{
             </div>
         </nav>
         <div className="container mt-3">
-          <h2>React Firestore CRUD</h2>
+          <h2>Crea y publica platillos en Firestore!</h2>
           <Routes>
             <Route exact path="platillo" element={<PlatillosList/>} />
             <Route exact path="add" element={<AddPlatillo/>} />

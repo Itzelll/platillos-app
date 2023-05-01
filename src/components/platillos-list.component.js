@@ -90,7 +90,7 @@ export default class PlatillosList extends Component {
           ) : (
             <div>
               <br />
-              <p>Please click on a Platillo...</p>
+              <p>Porfavor selecciona un Platillo...</p>
             </div>
           )}
         </div>

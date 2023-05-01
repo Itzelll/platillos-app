@@ -184,7 +184,12 @@ export default class Platillo extends Component {
             <p>Please click on a Platillo...</p>
           </div>
         )}
-      </div>
+        <div>
+          <div>
+              <img src={currentPlatillo.url} alt="imagenes"></img>
+          </div>
+        </div>
+      </div> 
     );
    }
 }
