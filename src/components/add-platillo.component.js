@@ -74,7 +74,7 @@ export default class AddPlatillo extends Component {
 
     PlatillosDataService.create(data)
       .then(() => {
-        console.log("Created new item successfully!");
+        console.log("Se ha creado un nuevo platillo exitosamente!");
         this.setState({
           submitted: true,
         });
@@ -96,6 +96,7 @@ export default class AddPlatillo extends Component {
 
   render() {
     return (
+
       <div className="submit-form">
         {this.state.submitted ? (
           <div>
@@ -130,6 +131,7 @@ export default class AddPlatillo extends Component {
                 onChange={this.onChangeDescription}
                 name="description"
               />
+
             </div>
 
             <div>
@@ -139,8 +141,10 @@ export default class AddPlatillo extends Component {
                 <input type="file" onChange={(event) => {
                   this.onChangeFile(event)
                 }} />
+
                 <button disabled={!this.state.file}>upload to firebase</button>
               </form>
+
             </div>
 
             <button onClick={this.savePlatillo} className="btn btn-success">

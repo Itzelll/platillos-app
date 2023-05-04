@@ -48,8 +48,10 @@ class App extends Component {
         </nav>
 
         <div className="container mt-3">
+
           <br />
           <h2>Publicaciones</h2>
+
           <Routes>
             <Route exact path="platillo" element={<PlatillosList />} />
             <Route exact path="add" element={<AddPlatillo />} />
