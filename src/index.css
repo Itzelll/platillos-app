@@ -12,3 +12,194 @@ code {
     monospace;
 }
 
+.Post {
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  margin-bottom: 60px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.Post-user {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+}
+
+.Post-user-profilepicture {
+  width: 30px;
+  height: 30px;
+}
+
+.Post-user-profilepicture img {
+  width: 150%;
+  height: 150%;
+  border-radius: 100%;
+}
+
+.Post-user-nickname {
+  margin-left: 45px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+}
+
+.Post-image-bg {
+  background-color: #efefef;
+}
+
+.Post-image img {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.Post-caption {
+  padding: 16px 16px;
+}
+
+.Post-caption strong {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+}
+
+.user {
+  margin-bottom: 2%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+}
+
+.vjs-fade-out {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.list-group-item {
+  width: 100%;
+}
+
+.list-row {
+  margin: auto;
+  justify-content: center;
+}
+
+.Nav {
+  color: black;
+  font-weight: bold;
+  background-color: #9b9b9b;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: height 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out;
+  height: 77px;
+  background: linear-gradient(240deg, rgb(238, 192, 93), rgb(240, 81, 155), purple);
+}
+
+.Nav-menus {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  height: 77px;
+  width: 70%;
+  margin: 0 auto;
+  padding: 26px 40px;
+}
+
+.Nav-brand-logo {
+  color: black;
+  display: block;
+  background-position: -176px 0px;
+  background-image: url("./instagram.png");
+  background-size: 405px 379px;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 176px;
+  text-indent: -1000%
+}
+
+.navbar-brand img {
+  margin-right: 80px;
+}
+
+.nav-item {
+  margin-left: 15px;
+}
+
+.reactions>* {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+
+.like-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+
+}
+
+.comment {
+  width: 175px;
+  height: 25px;
+  background: #eeeeee;
+}
+
+#new-comment {
+  width: 175px;
+  height: 25px;
+}
+
+.comment-list {
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
+.comentarios > * {
+  display: inline-block;
+}
+
+.cont-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.info {
+  color: #b4b4b4;
+  font-family: "Century Gothic";
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.info1 {
+  color: #ffffff;
+  font-family: "Century Gothic";
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.bottom {
+  background-color: #331061;
+  column-count:2;
+  column-gap: 1px;
+}
+
+.img-bottom {
+  width: 160px;
+  border-radius: 80px;
+  margin-left: 65%;
+}
