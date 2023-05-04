@@ -35,7 +35,7 @@ export default class Platillo extends Component {
 
   componentDidMount() {
     this.setState({
-        currentPlatillo: this.props.platillo,
+      currentPlatillo: this.props.platillo,
     });
   }
 
@@ -56,7 +56,7 @@ export default class Platillo extends Component {
     const description = e.target.value;
 
     this.setState((prevState) => ({
-        currentPlatillo: {
+      currentPlatillo: {
         ...prevState.currentPlatillo,
         description: description,
       },
@@ -69,7 +69,7 @@ export default class Platillo extends Component {
     })
       .then(() => {
         this.setState((prevState) => ({
-            currentPlatillo: {
+          currentPlatillo: {
             ...prevState.currentPlatillo,
             published: status,
           },
@@ -108,14 +108,15 @@ export default class Platillo extends Component {
       });
   }
 
-  render() { 
+  render() {
     const { currentPlatillo } = this.state;
 
     return (
       <div>
-        <h4>Platillo</h4>
+        <h4>Platillo: {this.state.title}</h4>
         {currentPlatillo ? (
           <div className="edit-form">
+            <img src={this.state.url} alt=""></img>
             <form>
               <div className="form-group">
                 <label htmlFor="title">Title</label>
@@ -181,10 +182,11 @@ export default class Platillo extends Component {
         ) : (
           <div>
             <br />
-            <p>Please click on a Platillo...</p>
+            <p>Por favor seleccione un Platillo...</p>
           </div>
         )}
       </div>
     );
-   }
+
+  }
 }

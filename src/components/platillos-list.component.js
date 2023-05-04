@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import PlatillosDataService from "../services/platillo.service";
 
-import Platillo from "./platillo.component";
-
+import cv from "../cv.jpeg";
+import LoveButton from "./reactions/LoveButton.component";
+import SadButton from "./reactions/SadButton.component";
+import CommentComponent from "./comment.component";
 export default class PlatillosList extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ export default class PlatillosList extends Component {
     this.onDataChange = this.onDataChange.bind(this);
 
     this.state = {
-      platillo: [],
+      platillos: [],
       currentPlatillo: null,
       currentIndex: -1,
     };
@@ -28,21 +30,22 @@ export default class PlatillosList extends Component {
   }
 
   onDataChange(items) {
-    let platillo = [];
+    let platillos = [];
 
     items.forEach((item) => {
       let id = item.id;
       let data = item.data();
-      platillo.push({
+      platillos.push({
         id: id,
         title: data.title,
         description: data.description,
         published: data.published,
+        url: data.url,
       });
     });
 
     this.setState({
-        platillo: platillo,
+      platillos: platillos,
     });
   }
 
@@ -61,39 +64,55 @@ export default class PlatillosList extends Component {
   }
 
   render() {
-    const { platillo, currentPlatillo, currentIndex } = this.state;
+    const { platillos } = this.state;
 
     return (
-      <div className="list row">
+
+      <div className="list-row cont-center">
         <div className="col-md-6">
-          <h4>Platillos List</h4>
 
           <ul className="list-group">
-            {platillo &&
-              platillo.map((platillo, index) => (
-                <li
-                  className={ "list-group-item " + (index === currentIndex ? "active" : "") }
+            {platillos &&
+              platillos.map((platillo, index) => (
+                <p
+                  className={"list-group-item "}
                   onClick={() => this.setActiveTutorial(platillo, index)}
                   key={index}
                 >
-                  {platillo.title}
-                </li>
+                  <div className="user">
+                    <header>
+                      <div className="Post-user">
+                        <div className="Post-user-profilepicture">
+                          <img src={cv} alt="itzelm" />
+                        </div>
+                        <div className="Post-user-nickname">
+                          <span>Itzel Mendez</span>
+                        </div>
+                      </div>
+                    </header>
+                    <div className="Post-image">
+                      <div className="Post-image-bg">
+                        <img src={platillo.url} alt="post" />
+                      </div>
+                    </div>
+
+                    <div className="Post-caption">
+                      <div className="reactions">
+                        <LoveButton /> <SadButton />
+                      </div>
+                      <div className="user">
+                      <strong>__itzelm__ </strong> {platillo.title}: {platillo.description}
+                      </div>
+                      <div className="comentarios">
+                        <CommentComponent />
+                      </div>
+                    </div>
+                  </div>
+                </p>
               ))}
           </ul>
         </div>
-        <div className="col-md-6">
-          {currentPlatillo ? (
-            <Platillo
-              platillo={currentPlatillo}
-              refreshList={this.refreshList}
-            />
-          ) : (
-            <div>
-              <br />
-              <p>Please click on a Platillo...</p>
-            </div>
-          )}
-        </div>
+
       </div>
     );
   }
