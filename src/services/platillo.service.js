@@ -20,4 +20,6 @@ class PlatillosDataService {
   }
 }
 
-export default new PlatillosDataService();
+const platillosDataService = new PlatillosDataService();
+
+export default platillosDataService;
