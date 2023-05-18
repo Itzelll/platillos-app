@@ -1,6 +1,7 @@
 class KafkaService {
+      url = 'https://node-producer-service-itzel2-itzelll.cloud.okteto.net/'
     //url = 'https://your-kafka-express-service-kafka-adsoftsito.cloud.okteto.net/';
-    url = 'http://localhost:8080/'
+    //url = 'http://localhost:8080/'
    
     reaction = async (name) => {
      await fetch(this.url + 'like?name=' + name, {
