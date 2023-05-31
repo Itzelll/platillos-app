@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
 import love from '../img/love.png';
 import KafkaService from "../../services/kafka.service";
-
-function saveLike(e, status) {
-  
-    let data = {
-      id: 0,
-      status: status
-    };
- 
-    console.log(JSON.stringify(data));
- 
-    KafkaService.reaction("love-button");
-    e.preventDefault();
-}
+import { useAuth } from '../../context/AuthContext';
 
 
-function LoveButton() {
+function LoveButton({pubId}) {
+    const {user} = useAuth();
     const [loves, setLikes] = useState(0);
     const [loved, setLiked] = useState(false);
+
+    function saveLike(e) { 
+        const uId= user.uid;    
+        const oId= pubId;
+        const rId= "love"
+        KafkaService.reaction(uId, oId, rId);
+        e.preventDefault();
+    }
     
     return (
         <div className="like-button-container">
