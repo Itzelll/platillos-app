@@ -25,9 +25,9 @@ class MongoDBService {
     }
   }
 
-  async getCommentsByUserId(userId) {
+  async getCommentsByObjectId(objectId) {
     try {
-      const response = await axios.get(`${this.baseUrl}/commentsByUserId/${userId}`);
+      const response = await axios.get(`${this.baseUrl}/commentsByUserId/${objectId}`);
       return response.data;
     } catch (error) {
       console.error('Error al realizar la consulta', error);

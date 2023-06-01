@@ -48,10 +48,10 @@ function LoveButton({ pubId }) {
             <button id="like"
                 className={`like-button ${loved ? 'liked' : ''}`}
                 onClick={(e) => {
-                    setLikes(loves + 1);
-                    setLiked(true);
                     e.preventDefault();
                     saveLike(e, 1);
+                    setLikes(loves + 1);
+                    setLiked(true);                    
                 }}
             >
                 <img src={love} className='img' width={35} height={35} alt="" /> {loves} <br />
