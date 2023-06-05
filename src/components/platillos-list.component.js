@@ -5,6 +5,10 @@ import cv from "../cv.jpeg";
 import LoveButton from "./reactions/LoveButton.component";
 import SadButton from "./reactions/SadButton.component";
 import CommentComponent from "./comment.component";
+
+import { AuthProvider } from "../context/AuthContext";
+
+
 export default class PlatillosList extends Component {
   constructor(props) {
     super(props);
@@ -98,13 +102,16 @@ export default class PlatillosList extends Component {
 
                     <div className="Post-caption">
                       <div className="reactions">
-                        <LoveButton /> <SadButton />
+                        <AuthProvider>
+                          <LoveButton pubId={platillo.id} />
+                          <SadButton pubId={platillo.id} />
+                        </AuthProvider>
                       </div>
                       <div className="user">
-                      <strong>__itzelm__ </strong> {platillo.title}: {platillo.description}
+                        <strong>__itzelm__ </strong> {platillo.title}: {platillo.description}
                       </div>
                       <div className="comentarios">
-                        <CommentComponent />
+                        <CommentComponent pubId={platillo.id} />
                       </div>
                     </div>
                   </div>
