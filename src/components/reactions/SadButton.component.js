@@ -32,7 +32,7 @@ function SadButton({pubId}) {
     
         // Llama a fetchData al montar o actualizar el componente
         fetchData();
-        },[])
+        })
     
 
     function saveLike(e) {  
