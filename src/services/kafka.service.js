@@ -20,6 +20,7 @@ class KafkaService {
    }
 
    comment = async (uId, oId, comment) => {
+      console.log(comment);
       console.log(this.url + "comments?userId=" + uId + "&objectId=" + oId + "&comment=" + comment)
       await fetch(this.url + "comments?userId=" + uId + "&objectId=" + oId + "&comment=" + comment, {
          method: 'GET',
