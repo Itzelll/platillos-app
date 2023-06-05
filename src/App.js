@@ -6,10 +6,19 @@ import React, { Component } from "react";
 import AddPlatillo from "./components/add-platillo.component";
 import PlatillosList from "./components/platillos-list.component";
 import instagram from "./instagram.png";
-import StatusList from './components/status.component';
 import cv from "./cv.jpeg"
 
+import { Login } from './components/users/Login'
+import { ProtectedRoute } from './components/ProtectedRoute';
+import { AuthProvider } from './context/AuthContext';
+import { Logout } from './components/users/Logout';
+import { Register } from './components/users/Register';
+import { Perfil } from './components/users/Perfil';
+
+
 class App extends Component {
+
+
   render() {
     return (
 
@@ -37,11 +46,22 @@ class App extends Component {
                     Add
                   </Link>
                 </li>
-                <li>
-                  <Link to={"status"} className='nav-link'>
-                    Status
+                <li className='nav-item'>
+                  <Link to={"/perfil"} className='nav-link'>
+                    Ver perfil
                   </Link>
                 </li>
+                <li className='nav-item'>
+                  <AuthProvider>
+                    <Logout />
+                  </AuthProvider>
+                </li>
+                <li className="nav-item justify-content-end">
+                  <a className="nav-link" href='https://itzelll-streamlit-mongodb-streamlit-mongo-a67gjw.streamlit.app/'>
+                    Analiticas
+                  </a>
+                </li>
+
               </div>
             </div>
           </div>
@@ -52,11 +72,32 @@ class App extends Component {
           <br />
           <h2>Publicaciones</h2>
 
-          <Routes>
-            <Route exact path="platillo" element={<PlatillosList />} />
-            <Route exact path="add" element={<AddPlatillo />} />
-            <Route exact path="status" element={<StatusList />} />
-          </Routes>
+          <AuthProvider>
+            <Routes>
+              <Route path='login' element={<Login />} />
+              <Route path='register' element={<Register />} />
+              <Route exact path="platillo" element={
+                <ProtectedRoute>
+                  <PlatillosList />
+                </ProtectedRoute>
+              } />
+              <Route exact path="add" element={
+                <ProtectedRoute>
+                  <AddPlatillo />
+                </ProtectedRoute>
+              } />
+              <Route path="analitics" element={
+                <ProtectedRoute>
+
+                </ProtectedRoute>
+              } />
+              <Route path="perfil" element={
+                <ProtectedRoute>
+                  <Perfil />
+                </ProtectedRoute>
+              } />
+            </Routes>
+          </AuthProvider>
         </div>
         <footer>
           <div className='bottom'>
