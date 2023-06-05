@@ -46,7 +46,6 @@ class App extends Component {
                     Add
                   </Link>
                 </li>
-
                 <li className='nav-item'>
                   <Link to={"/perfil"} className='nav-link'>
                     Ver perfil
@@ -56,6 +55,11 @@ class App extends Component {
                   <AuthProvider>
                     <Logout />
                   </AuthProvider>
+                </li>
+                <li className="nav-item justify-content-end">
+                  <a className="nav-link" href='https://itzelll-streamlit-mongodb-streamlit-mongo-a67gjw.streamlit.app/'>
+                    Analiticas
+                  </a>
                 </li>
 
               </div>
@@ -80,6 +84,11 @@ class App extends Component {
               <Route exact path="add" element={
                 <ProtectedRoute>
                   <AddPlatillo />
+                </ProtectedRoute>
+              } />
+              <Route path="analitics" element={
+                <ProtectedRoute>
+
                 </ProtectedRoute>
               } />
               <Route path="perfil" element={
